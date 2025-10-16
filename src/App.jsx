@@ -10,7 +10,6 @@ export default function ImagemETudoMidia() {
   )}`;
 
   useEffect(() => {
-    // Smoke test básico
     console.assert(whatsLink.startsWith("https://wa.me/"), "WhatsApp link inválido");
   }, []);
 
@@ -88,12 +87,12 @@ function Servicos() {
             icon="🖥️"
             title="Totem Imagem Pro"
             desc="Totens de 50” com base sólida e design premium, ideais para PDVs e recepções."
-            bullets={['23.8" a 65"','Base sólida, dupla face opcional','Instalação limpa']}
+            bullets={['23.8\" a 65\"','Base sólida, dupla face opcional','Instalação limpa']}
           />
           <Card
             icon="🏢"
             title="ElevUp (Elevadores)"
-            desc={'Telas 23.8" pretas com fixação 3M, sem furos. Conexão via rádio IP do condomínio.'}
+            desc={'Telas 23.8\" pretas com fixação 3M, sem furos. Conexão via rádio IP do condomínio.'}
             bullets={['Instala em ~30 min','Switch 8 portas + régua smart','Relatórios e suporte']}
           />
           <Card
@@ -110,11 +109,10 @@ function Servicos() {
 
 function Galeria() {
   const s = getStyles();
-  // Substitua essas URLs pelas imagens tratadas quando fizer o upload
   const images = [
     { src: 'https://picsum.photos/id/1011/1200/800', cat: 'ElevUp 23.8' },
     { src: 'https://picsum.photos/id/1015/1200/800', cat: 'Totem 50' },
-    { src: 'httpsum.photos/id/1039/1200/800', cat: 'Ambiente' },
+    { src: 'https://picsum.photos/id/1039/1200/800', cat: 'Ambiente' },
     { src: 'https://picsum.photos/id/1040/1200/800', cat: 'ElevUp 23.8' },
     { src: 'https://picsum.photos/id/1041/1200/800', cat: 'Totem 50' },
     { src: 'https://picsum.photos/id/1042/1200/800', cat: 'Ambiente' },
@@ -181,19 +179,19 @@ function Planos() {
             title="ElevUp – por tela"
             price="R$ 580/mês"
             note="Instalação, suporte e manutenção inclusos"
-            items={['Tela 23.8" IPS Full HD','Fixação 3M sem furos','Switch + régua smart + roteador','Relatórios mensais']}
+            items={['Tela 23.8\" IPS Full HD','Fixação 3M sem furos','Switch + régua smart + roteador','Relatórios mensais']}
           />
           <PlanCard
             title="TV+ Box / Monitor Corporativo"
             price="R$ 300/mês"
-            note="Android/mini‑PC + plataforma"
+            note="Android/mini-PC + plataforma"
             items={['Instalação inclusa','Suporte e garantia','Login individual','Conteúdo por conta do cliente']}
           />
           <PlanCard
             title="Totem Imagem Pro"
             price="Sob consulta"
             note="Diferentes tamanhos e acabamentos"
-            items={['23.8" a 65"','Base sólida, dupla face opcional','Design minimalista','Projeto e implantação']}
+            items={['23.8\" a 65\"','Base sólida, dupla face opcional','Design minimalista','Projeto e implantação']}
           />
         </div>
       </div>
@@ -211,13 +209,13 @@ function Contato({ whatsLink, name, email, message, setName, setEmail, setMessag
           <p style={{ opacity: 0.8, marginTop: 8 }}>Envie uma mensagem e retornamos com um orçamento sob medida.</p>
           <div style={s.rowGap}>
             <a href={whatsLink} target="_blank" rel="noreferrer" style={s.btnPrimaryDark}>💬 WhatsApp</a>
-            <a href="mailto:imagemetudomidia@gmail.com" style={s.btnGhostDark}>✉️ Enviar e‑mail</a>
+            <a href="mailto:imagemetudomidia@gmail.com" style={s.btnGhostDark}>✉️ Enviar e-mail</a>
           </div>
         </div>
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            window.location.href = `mailto:imagemetudomidia@gmail.com?subject=${encodeURIComponent('Novo contato pelo site')}&body=${encodeURIComponent(`Nome: ${name}\nEmail: ${email}\nMensagem: ${message}`)}`;
+            window.location.href = `mailto:imagemetudomidia@gmail.com?subject=${encodeURIComponent('Novo contato pelo site')}&body=${encodeURIComponent(\`Nome: ${name}\nEmail: ${email}\nMensagem: ${message}\`)}`;
           }}
           style={s.form}
         >
@@ -226,7 +224,7 @@ function Contato({ whatsLink, name, email, message, setName, setEmail, setMessag
             <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Seu nome" style={s.input} />
           </div>
           <div style={s.formField}>
-            <label style={s.label}>E‑mail</label>
+            <label style={s.label}>E-mail</label>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="voce@email.com" style={s.input} />
           </div>
           <div style={s.formField}>
@@ -252,7 +250,7 @@ function Footer() {
         </div>
         <div style={{ color: '#2f3437' }}>
           <div>📍 Rua Maria Quitéria, 188 – PR</div>
-          <div>📞 (43) 99828‑2173</div>
+          <div>📞 (43) 99828-2173</div>
           <div>✉️ imagemetudomidia@gmail.com</div>
           <div>🧾 CNPJ: 32.254.943/0001-37</div>
         </div>
@@ -333,12 +331,12 @@ function getStyles() {
     iconBadge: { height: 36, width: 36, borderRadius: 12, background: '#111827', color: '#fff', display: 'grid', placeItems: 'center' },
     cardDesc: { color: '#4b5563', fontSize: 14, margin: '8px 0 12px' },
 
-    # Galeria
+    // Gallery
     thumbBtn: { padding: 0, border: 0, background: 'transparent', textAlign: 'left', cursor: 'pointer' },
     thumbImg: { width: '100%', height: 180, objectFit: 'cover', borderRadius: 12, display: 'block' },
     thumbCaption: { padding: 10, fontWeight: 600, fontSize: 14 },
 
-    # Lightbox
+    // Lightbox
     lbOverlay: { position: 'fixed', inset: 0, background: 'rgba(0,0,0,.75)', display: 'grid', placeItems: 'center', zIndex: 100 },
     lbInner: { position: 'relative', maxWidth: '90vw', maxHeight: '90vh' },
     lbImg: { maxWidth: '90vw', maxHeight: '80vh', borderRadius: 12, display: 'block' },
